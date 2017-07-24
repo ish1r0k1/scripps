@@ -1,0 +1,13 @@
+# Logs
+logs
+*.log
+
+# Directories
+**/node_modules/
+
+# Build files
+public/app.js
+public/style.css
+
+.DS_Store
+Thumbs.db
