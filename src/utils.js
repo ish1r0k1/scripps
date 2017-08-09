@@ -48,3 +48,10 @@ export function decompressString(str) {
   //   )
   // )
 }
+
+export const prepareTitle = (str) => {
+  return str
+    .replace(/\[.*\]/, '')
+      .replace(/\(.*\)/, '')
+        .replace(/\s$/, '')
+}

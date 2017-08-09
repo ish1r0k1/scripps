@@ -1,5 +1,9 @@
 .album {
-  padding: 40px 0 30px;
+  padding: 40px 0 100px;
+
+  @media (min-width: 550px) {
+    padding-bottom: 30px;
+  }
 
   &__header {
     letter-spacing: .01em;
@@ -30,6 +34,11 @@
   position: relative;
   width: 100%;
   padding-top: 100%;
+  margin-bottom: 16px;
+
+  @media (min-width: 550px) {
+    margin-top: 0;
+  }
 
   &__image {
     position: absolute;
@@ -49,18 +58,24 @@
 .tracklist {
   margin-bottom: 24px;
 
-  .top-align { margin-top: 15px; }
+  .top-align {
+    @media (min-width: 550px) {
+      margin-top: 15px;
+    }
+  }
 
   &__item {
     line-height: 1;
-    padding: 0 16px;
+    padding: 16px 36px;
     cursor: pointer;
     margin: 8px 0;
+    position: relative;
 
     &:hover { background: #f0f0f0; }
 
     @media (min-width: 550px) {
       margin: 0;
+      padding: 0 16px;
 
       .columns { height: 72px; }
     }
@@ -71,9 +86,18 @@
       }
     }
 
-    .trackNumber {
+    .trackNumber,
+    .icon-play {
       color: $gray;
       line-height: 16px;
+      position: absolute;
+      top: 17px;
+      left: 10px;
+
+      @media (min-width: 550px) {
+        position: static;
+        transform: translate(0);
+      }
     }
 
     .trackTitle { font-size: 20px; }
@@ -86,8 +110,13 @@
     .seekTime {
       text-align: right;
       margin-bottom: 15px;
+      position: absolute;
+      top: 17px;
+      right: 10px;
 
       @media (min-width: 550px) {
+        position: static;
+        transform: translate(0);
         margin-bottom: 0;
       }
     }

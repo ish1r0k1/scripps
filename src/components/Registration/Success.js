@@ -9,7 +9,9 @@ const Success = ({ tracks, tracklist }) => {
 
   return(
     <div>
-      <p>Creation of album page is completed</p>
+      <p>
+        アルバムの作成が完了しました。
+      </p>
       <Link className="button" to={`/albums/${id}`}>See page</Link>
     </div>
   )

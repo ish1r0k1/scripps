@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { hashHistory } from 'react-router'
 import { SoundPlayerContainer } from 'react-soundplayer/addons'
 import { CLIENT_ID } from '../constants'
 import Loading from '../components/Loading'
@@ -20,10 +21,17 @@ class AlbumPage extends Component {
 
   componentDidMount() {
     const { params: { id } } = this.props
-    const { tracks, tracklist } = JSON.parse(decompressString(id))
+    let json
 
-    this.props.updateTracks(tracks)
-    this.props.updateTracklist(tracklist)
+    try {
+      json = JSON.parse(decompressString(id))
+    } catch(err) {
+      hashHistory.push('/not_found')
+    } finally {
+      const { tracks, tracklist } = json
+      this.props.updateTracks(tracks)
+      this.props.updateTracklist(tracklist)
+    }
   }
 
   trackReady() {

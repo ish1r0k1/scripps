@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Timer, Progress } from 'react-soundplayer/components'
 import { PlayButton, VolumeControl } from '../components/Player'
+import { prepareTitle } from '../utils'
 
 class Player extends Component {
   static propTypes = {
@@ -11,6 +12,11 @@ class Player extends Component {
     pause: PropTypes.func.isRequired,
     seek: PropTypes.func.isRequired,
     track: PropTypes.object.isRequired,
+  }
+
+  componentWillUnmount() {
+    const { pause } = this.props
+    pause()
   }
 
   render() {
@@ -37,7 +43,7 @@ class Player extends Component {
                 currentTime={this.props.player.currentTime}
               />
             </div>
-            <div className="player-controls__title">{track.title}</div>
+            <div className="player-controls__title">{prepareTitle(track.title)}</div>
             <div className="player-controls__volume">
 {/*
               <VolumeControl />
