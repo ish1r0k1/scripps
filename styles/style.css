@@ -1,2 +1,19 @@
 @import 'vendor/normalize';
 @import 'vendor/skeleton';
+@import 'vendor/fontello';
+@import '_variables';
+
+/* Structure */
+@import '_structure';
+
+/* Player */
+@import '_player';
+
+/* Album */
+@import '_album';
+
+/* Registration */
+@import '_registration';
+
+/* Home */
+@import '_home';

@@ -1,0 +1,10 @@
+body {
+  color: $black;
+  letter-spacing: .03em;
+}
+
+.middle-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

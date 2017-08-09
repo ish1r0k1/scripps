@@ -1,0 +1,95 @@
+.album {
+  padding: 40px 0 30px;
+
+  &__header {
+    letter-spacing: .01em;
+    margin-bottom: 60px;
+
+    .title {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    .username {
+      font-size: 20px;
+      color: $gray;
+    }
+  }
+
+  &__footer {
+    padding-left: 16px;
+
+    .copyright {
+      font-size: 12px;
+      color: $gray;
+    }
+  }
+}
+
+.artwork {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.tracklist {
+  margin-bottom: 24px;
+
+  .top-align { margin-top: 15px; }
+
+  &__item {
+    line-height: 1;
+    padding: 0 16px;
+    cursor: pointer;
+    margin: 8px 0;
+
+    &:hover { background: #f0f0f0; }
+
+    @media (min-width: 550px) {
+      margin: 0;
+
+      .columns { height: 72px; }
+    }
+
+    &--oneline {
+      @media (min-width: 550px) {
+        .columns { height: 56px; }
+      }
+    }
+
+    .trackNumber {
+      color: $gray;
+      line-height: 16px;
+    }
+
+    .trackTitle { font-size: 20px; }
+
+    .artistName {
+      color: $gray;
+      margin-top: 10px;
+    }
+
+    .seekTime {
+      text-align: right;
+      margin-bottom: 15px;
+
+      @media (min-width: 550px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
